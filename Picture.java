@@ -367,7 +367,40 @@ public class Picture
   }
 
    ////////////////////// methods ///////////////////////////////////////
-
+   //Name: Lauren Pak
+   //Period: 1
+   
+   //sepiaTone method:
+   public void sepiaTone()
+   {
+     //put the pixels into an array
+     Pixel[][] pixels = this.getPixels2D();
+     //create a pixel variable and set it to null
+     Pixel pixel = null;
+     //create variables for red, green, and blue
+     int redValue = 0;
+     int greenValue = 0;
+     int blueValue = 0;
+     
+     //nested loop to loop through pixels
+     for (int row = 0; row<pixels.length; row++)
+     {
+       for (int col = 0; col<pixels[0].length; col++)
+       {
+         //get the current pixel
+         pixel = pixels[row][col];
+         //get the color values for red, green, blue
+         redValue = pixel.getRed();
+         greenValue = pixel.getGreen();
+         blueValue = pixel.getBlue();
+         
+         //Use sepia tone formula and set new RGB values 
+         pixel.setRed((int)(0.393*redValue + 0.769*greenValue + 0.189*blueValue));
+         pixel.setGreen((int)(0.349*redValue + 0.686*greenValue + 0.168*blueValue));
+         pixel.setBlue((int)(0.272*redValue + 0.534*greenValue + 0.131*blueValue));
+      }
+    }
+  }
    
 
 
